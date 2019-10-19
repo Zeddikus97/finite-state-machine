@@ -74,17 +74,7 @@ class FSM {
         if (this.previous_state=='') return false
         this.next_state = this.current_state;
         this.current_state = this.previous_state;
-        return true;*/
-        if (this.history.length != 0) {
-            this.redoState.push(this.state);
-            var prevState = this.history.pop();
-            this.history.pop();
-            this.state = prevState;
-            this.redoFlag = true;
-        } else{
-            return false;
-        }
-        return true;
+        return true
     }
 
     /**
